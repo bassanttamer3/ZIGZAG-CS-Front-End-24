@@ -40,5 +40,7 @@ The designs were created to the following widths:
 
 - Family: [Outfit](https://fonts.google.com/specimen/Outfit)
 - Weights: 400, 600, 700
+- 
 ### Photo 
+
 ![desktop-design](https://github.com/bassanttamer3/ZIGZAG-CS-Front-End-24/assets/115741505/ce199bea-7bc2-48c5-9ae1-0372f9d40d21)
