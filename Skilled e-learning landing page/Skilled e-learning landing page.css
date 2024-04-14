@@ -1,0 +1,365 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+   body {
+    background: linear-gradient(180deg, #FFF 0%, #F0F1FF 100%);
+    
+  }
+
+   .header {
+    overflow-x: hidden;
+    position: relative;
+
+  }
+  .container{
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ul li{
+    list-style-type: none;
+  }
+  button {
+    border: none;
+    border-radius: 28px;
+    width: 160px;
+    height: 50px;
+    padding: 0 25px;
+    font-size: 18px;
+    font-weight: 540;
+  }
+  .Top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  .logo {
+     color: #13183f ;
+     font-size: 30px;
+     font-weight: 900;
+
+  }
+  .darkbutton{
+    color: #fff;
+    background-color: #13183f;
+   
+  }
+   .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .text h1{
+    color: #13183f;
+    font-size: 56px;
+    font-weight: 750;
+  }
+  .text p{
+    color: #83869a;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-top: 2rem;
+    width: 70%;
+  }
+  .colorbutton{
+    color: #fff;
+    background: var(--Gradient-1, linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%));
+    margin-top: 20px;
+  }
+  .desktop-img {
+    margin-right: -33rem;
+    margin-top: -15rem;
+   
+  }
+  
+  .tablet-img {
+    display: none;
+  }
+  
+  .mobile-img {
+    display: none;
+  }
+  .contentbox{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap ;
+  }
+  .box{
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    margin-right: 20px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 45px;
+  }
+  .box1{
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: var(--Gradient-1, linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%));
+    color: white;
+    font-size: 39px;
+    font-weight: 400;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 45px;
+   
+  }
+  .box1 p{
+    margin-top: 40px;
+    margin-left: 30px;
+    
+
+  }
+  .icon{
+    margin-left: 1.5rem;
+    margin-top: -1.5rem;
+  }
+  .box h3{
+    color: #13183f ;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+  .box p{
+    color: #83869a;
+    font-size: 19px;
+    line-height: 28px;
+    width: 90%;
+    margin-left: 30px;
+  }
+  .box-link{
+    color: #F74780;
+    font-size: 15px;
+    font-weight: 550;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15%; 
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  .footer{
+    margin-top: 100px;
+  }
+  .final{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background-color: #13183f;
+    max-width: 100%;
+    overflow: auto;
+    height: 90px;
+
+    
+  }
+  .finallogo{
+    color: white;
+    font-size: 30px;
+     font-weight: 700;
+     margin-left: 100px;
+  }
+  .buttonfinal{
+    color: #fff;
+    background: var(--Gradient-1, linear-gradient(360deg, #ff48b3 0%, #6165d6 100%));
+    margin-top: 10px;
+    margin-right: 100px;
+  }
+ 
+  @media screen and (max-width: 1024px) {
+    .desktop-img {
+        display: none;
+    }
+    .tablet-img {
+        display: block;
+        margin-top: 2rem;
+    }
+    .tablet-img img{
+        margin-right: -290rem;
+        margin-top: -35rem;
+    }
+    .text h1 {
+        font-size: 54px;
+        font-weight: 7500;
+        margin-top: 50px;
+        width: 70%;
+    }
+    .logo {
+        font-size: 50px;
+        font-weight: 600;
+     }
+    .content {
+        flex-direction: column;
+    }
+    button {
+        border: none;
+        border-radius: 28px;
+        width: 180px;
+        height: 75px;
+        padding: 0 25px;
+        font-size: 20px;
+        font-weight: 540;
+      }
+      .darkbutton{
+        color: #fff;
+        background-color: #13183f;
+       
+      }
+       .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .text p{
+        color: #83869a;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-top: 2rem;
+        width: 60%;
+      }
+      .colorbutton{
+        color: #fff;
+        background: var(--Gradient-1, linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%));
+        margin-top: 35px;
+      }
+      .box1 p{
+        font-weight: 510;
+        font-size: 35px;
+      }
+      .box h3{
+        font-size: 25px;
+      }
+      .box p{
+     
+        font-size: 20px;
+        margin-bottom: 20px;
+      
+      }
+      .box-link{
+        font-size: 18px;
+        font-weight: 550;
+        bottom: 5%; 
+       
+      }
+      .finallogo{
+        margin: 40px;
+        font-size: 30px;
+        font-weight: 90px;
+      }
+      .buttonfinal{
+        margin: 40px;
+        width: 160px;
+        height: 45px;
+      }
+    
+   
+
+}
+
+
+@media screen and (max-width: 740px) {
+    .desktop-img,
+    .tablet-img {
+        display: none;
+    }
+    .mobile-img {
+        display: block;
+        margin-top: 2rem;
+    }
+    .mobile-img img{
+        width: 850px;
+        height: auto;
+    }
+    .logo {
+        font-size: 55px;
+        font-weight: 750;
+     }
+      button {
+        width: 200px;
+        height: 70px;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .text h1{
+        color: #13183f;
+        font-size: 55px;
+        font-weight: 750;
+        margin-top: 45px;
+      }
+      .text p{
+        color: #83869a;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 40px;
+        margin-top: 2rem;
+        width: 90%;
+      }
+      .colorbutton{  
+        margin-top: 30px;
+        width: 250px;
+        height: 80px;
+      }
+      .box{
+        width: 650px;
+        height: 350px;
+    
+      }
+      .box1{
+        width: 650px;
+        height: 170px;
+       
+      }
+      .box1 p{
+        font-weight: 600;
+        font-size: 50px;
+      }
+      
+      .icon img {
+        width: 90px;
+        height: auto;
+    }
+      .box h3{
+        font-weight: 600;
+        font-size: 50px;
+      }
+      .box p{
+        font-size: 29px;
+        line-height: 37px;
+        font-weight: 50;
+        margin-bottom: 95px;
+      }
+      .box-link{
+       margin-top: 30px;
+        font-size: 30px;
+        font-weight: 550;
+        bottom: 5%; 
+      
+      }
+      .finallogo{
+        margin: 10px;
+        font-size: 40px;
+        font-weight: 90px;
+      }
+      .buttonfinal{
+        margin: 10px;
+       height: 60px;
+      }
+      .final{
+        height: 150px;
+      }
+}
