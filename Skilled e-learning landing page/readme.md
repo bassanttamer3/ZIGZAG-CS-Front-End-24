@@ -24,3 +24,4 @@ To view this landing page locally:
    git clone https://github.com/bassanttamer3/ZIGZAG-CS-Front-End-24.git
 
 ## Photo 
+![Screenshot ](https://github.com/bassanttamer3/ZIGZAG-CS-Front-End-24/assets/115741505/742f8a71-47e4-4471-bea1-043f0b5d8e42)
