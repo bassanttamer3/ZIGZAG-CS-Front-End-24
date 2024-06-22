@@ -1,93 +1,102 @@
 
-const output_year = document.querySelector("#output_year");
-const output_month = document.querySelector("#output_month");
-const output_day = document.querySelector("#output_day");
-const submit_btn = document.querySelector("#arrow");
+let form = document.getElementsByTagName('form')[0];
+let today = new Date();
+let years = document.getElementById('years');
+let months = document.getElementById('months');
+let days = document.getElementById('days');
 
-let isValid = false;
-const input_year = document.querySelector("#year");
-const input_day = document.querySelector("#day");
-const input_month = document.querySelector("#month");
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); 
 
+  
+  let bornDay = document.getElementById('bornDate');
+  let bornMonth = document.getElementById('bornMonth');
+  let bornYear = document.getElementById('bornYear');
 
-const error_day = document.querySelector("#error_message_day");
-const error_month = document.querySelector("#error_message_month");
-const error_year = document.querySelector("#error_message_year");
-
-submit_btn.addEventListener("click", CalculateDate);
-
-input_day.addEventListener("input", (e) => {
-  if (+input_day.value > 31) {
-    error_day.textContent = "Must be a valid date";
-    isValid = false;
+  
+  if (!validate(bornDay, bornMonth, bornYear)) {
+    years.textContent = "--";
+    months.textContent = "--";
+    days.textContent = "--";
     return;
-  } else {
-    isValid = true;
-    error_day.textContent = "";
   }
-  if (+input_day.value === 0) {
-    isValid = false;
-    error_day.textContent = "This field is required";
-    isValid = false;
-    return;
-  } else {
-    error_day.textContent = "";
+
+  
+  bornDay = parseInt(bornDay.value);
+  bornMonth = parseInt(bornMonth.value);
+  bornYear = parseInt(bornYear.value);
+
+  
+  let born = new Date(bornYear, bornMonth - 1, bornDay);
+
+
+  let diffYears = today.getFullYear() - born.getFullYear();
+  let diffMonths = today.getMonth() - born.getMonth();
+  let diffDays = today.getDate() - born.getDate();
+
+  
+  if (diffMonths < 0 || (diffMonths === 0 && diffDays < 0)) {
+    diffYears--;
+    diffMonths += 12;
   }
+
+  if (diffDays < 0) {
+    diffMonths--;
+    diffDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+  }
+
+  
+  years.textContent = diffYears;
+  months.textContent = diffMonths;
+  days.textContent = diffDays;
 });
 
-input_month.addEventListener("input", (e) => {
-  if (+input_month.value > 12) {
-    error_month.textContent = "Must be a valid date";
-    isValid = false;
-    return;
-  } else {
-    isValid = true;
-    error_month.textContent = "";
-  }
-  if (+input_month.value === 0) {
-    isValid = false;
-    error_month.textContent = "This field is required";
-    isValid = false;
-    return;
-  } else {
-    error_month.textContent = "";
-  }
-});
 
-input_year.addEventListener("input", (e) => {
-  if (+input_year.value > 2023) {
-    error_year.textContent = "Must be a valid date";
-    isValid = false;
-    return;
-  } else {
-    isValid = true;
-    error_year.textContent = "";
-  }
-  if (+input_year.value === 0) {
-    isValid = false;
-    error_year.textContent = "This field is required";
-    isValid = false;
-    return;
-  } else {
-    error_year.textContent = "";
-  }
-});
+function validate(bornDay, bornMonth, bornYear) {
+  let isValid = true;
+  let currentYear = new Date().getFullYear();
 
-function CalculateDate() {
-  if (isValid) {
-    let birthday = `${input_month.value}/${input_day.value}/${input_year.value}`;
-    console.log(birthday);
-    let birthdayObj = new Date(birthday);
-    let ageDiffMill = Date.now() - birthdayObj;
-    let ageDate = new Date(ageDiffMill);
-    let ageYears = ageDate.getUTCFullYear() - 1970;
-    let ageMonth = ageDate.getUTCMonth();
-    let ageDay = ageDate.getUTCDate();
-    
-    output_day.textContent = ageDay;
-    output_month.textContent = ageMonth;
-    output_year.textContent = ageYears;
+
+  if (bornDay.value === "" || isNaN(bornDay.value) || bornDay.value < 1 || bornDay.value > 31) {
+    setError(0, "Must be a valid day");
+    isValid = false;
   } else {
-    alert("error");
+    clearError(0);
   }
+
+  
+  if (bornMonth.value === "" || isNaN(bornMonth.value) || bornMonth.value < 1 || bornMonth.value > 12) {
+    setError(1, "Must be a valid month");
+    isValid = false;
+  } else {
+    clearError(1);
+  }
+
+  if (bornYear.value === "" || isNaN(bornYear.value) || bornYear.value > currentYear) {
+    setError(2, "Must be a valid year");
+    isValid = false;
+  } else {
+    clearError(2);
+  }
+
+  if (isValid && (bornDay.value > new Date(bornYear.value, bornMonth.value, 0).getDate())) {
+    setError(0, "Must be a valid day");
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+
+function setError(index, message) {
+  document.getElementsByTagName("small")[index].textContent = message;
+  document.getElementsByTagName("label")[index].style.color = "hsl(0, 100%, 67%)";
+  document.getElementsByTagName("input")[index].style.borderColor = "hsl(0, 100%, 67%)";
+}
+
+
+function clearError(index) {
+  document.getElementsByTagName("small")[index].textContent = "";
+  document.getElementsByTagName("label")[index].style.color = "hsl(0, 1%, 44%)";
+  document.getElementsByTagName("input")[index].style.borderColor = "hsl(0, 0%, 86%)";
 }

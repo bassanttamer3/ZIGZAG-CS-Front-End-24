@@ -2,49 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link  rel="stylesheet"  href="age-calculator-app.css">
+  
   <title>Age calculator app</title>
+   <link  rel="stylesheet"  href="age-calculator-app.css">
 </head>
 <body>
-  <main>
-    <div class="main-content">
-      <div class="box-inputs">
-        <div class="single-input">
-          <label>Day</label>
-          <input type="text" placeholder="DD" id="day">
-          <div class="error" id="error_message_day"></div>
+
+  <div class="backgroundContainer">
+    <div class="container">
+      <form>
+      <div class="inputContainer">
+        <div class="card">
+          <label for="bornDate">DAY</label>
+          <div>
+            <input type="text" id="bornDate" maxlength="2" placeholder="DD">
+            <small></small>
+          </div>
         </div>
-        <div class="single-input">
-          <label>Month</label>
-          <input type="text" placeholder="MM" id="month">
-          <div class="error" id="error_message_month"></div>
+        <div class="card">
+          <label for="bornMonth">MONTH</label>
+          <div>
+            <input type="text" id="bornMonth" max="2" placeholder="MM">
+            <small></small>
+          </div>
         </div>
-        <div class="single-input">
-          <label>Year</label>
-          <input type="text" placeholder="YYYY" id="year">
-          <div class="error" id="error_message_year"></div>
+        <div class="card">
+          <label for="bornYear">YEAR</label>
+          <div>
+            <input type="text" id="bornYear" placeholder="YYYY" maxlength="4">
+            <small></small>
+          </div>
         </div>
       </div>
-      <div class="button-content">
-        <div class="line"></div>
-        <button type="submit" id="arrow"><img src="assets/images/icon-arrow.svg"></button>
-        <div class="line-sec"></div>
-      </div>
-      <div class="result-view">
-        <span id="output_year">--</span> years
-      </div>
-      <div class="result-view">
-        <span id="output_month">--</span> months
-      </div>
-      <div class="result-view">
-        <span id="output_day">--</span> days
+        
+        <div class="buttonContainer">
+          <div class="innerButtonContainer">
+            <button class="btn" type="submit"><img src="./assets/images/icon-arrow.svg" /></button>
+          </div>
+        </div>
+      </form>
+      <div class="resultContainer">
+        <p><span id="years">--</span> years</p>
+        <p><span id="months">--</span> months</p>
+        <p><span id="days">--</span> days</p>
       </div>
     </div>
-  </main>
-
-<script src="age-calculator-app.js"></script>
+  </div>
+    <script src="age-calculator-app.js"></script>
 </body>
 </html>

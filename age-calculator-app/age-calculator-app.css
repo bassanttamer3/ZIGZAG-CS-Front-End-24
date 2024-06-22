@@ -1,129 +1,144 @@
-@font-face {
-    font-family: Poppins-Bold;
-    src: url("./assets/fonts/Poppins-Bold.ttf");
-  }
-  
-  @font-face {
-    font-family: Poppins-BoldItalic;
-    src: url("./assets/fonts/Poppins-BoldItalic.ttf");
-  }
-  *{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+* {
     box-sizing: border-box;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    background-color: hsl(0, 0%, 94%);
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins";
+    margin: 0px;
+    padding: 0px;
 }
-main{
+
+.backgroundContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-grow: 1;
+    background-color: hsl(0, 0%, 86%);
 }
-.main-content{
-    width: 700px;
-    height: 550px;
-    background-color: white;
+
+
+.container {
+    margin: 20px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: hsl(0, 0%, 100%);
     border-radius: 20px;
-    border-bottom-right-radius: 170px;
-    padding: 40px;
+    border-bottom-right-radius: 100px;
+    box-sizing: border-box;
 }
-.box-inputs{
+
+.inputContainer {
     display: flex;
-    flex-direction: row;
-    width: 480px;
-    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
     color: hsl(0, 1%, 44%);
-    text-transform: uppercase;
+    letter-spacing: 2px;
 }
-.single-input{
-    display: flex;
-    flex-direction: column;
-}
-.single-input label{
-    letter-spacing: 0.2rem;
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-.single-input input{
-    width: 140px;
-    padding: 10px;
-    padding-left: 20px;
-    font-size: 32px;
-    font-weight: 700;
-    border-radius: 8px;
+
+input {
+    width: 100%;
+    font-size: 23px;
+    font-weight: 600;
+    padding: 15px 15px;
+    border-radius: 10px;
     border: 1px solid hsl(0, 0%, 86%);
-    color: hsl(0, 0%, 8%);
-}
-.single-input input:focus{
-    background-color: white;
     outline: none;
 }
-.error{
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
-    color: hsl(0, 100%, 67%);
-    text-transform: none;
-    margin-top: 10px;
+ 
+input:focus {
+    border: 1.5px solid hsl(259, 100%, 65%);
 }
-.button-content{
+.card {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
-.line{
-    width: 100%;
-    border-bottom: 1px solid hsl(0, 0%, 86%);
-}
-button{
-    padding: 20px;
-    border: none;
-    border-radius: 50%;
-    background-color: hsl(259, 100%, 65%);
-    cursor: pointer;
-    transition: .3s ease;
-}
-.result-view{
-    font-size: 80px;
+
+p {
+    font-size: 50px;
     font-weight: 800;
     font-style: italic;
-    margin-bottom: -20px;
-    color: hsl(0, 0%, 8%);
+    margin: 0px;
+    line-height: 1;
 }
-span{
-    color: hsl(259, 100%, 65%);
+
+.buttonContainer {
+    padding: 50px 0px;
 }
-@media (max-width: 600px){
-    .main-content{
-        width: 350px;
-        height: 430px;
-        padding: 30px;
-        border-bottom-right-radius: 100px;
+
+.innerButtonContainer {
+    height: 0px;
+    border: 1px solid hsl(0, 0%, 86%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background-color: hsl(259, 100%, 65%);
+    padding: 20px;
+    border-radius: 50%;
+    border: 0px;
+}
+
+.btn:active {
+    background-color: hsl(0, 0%, 8%);
+}
+
+img {
+    width: 30px;
+}
+
+span {
+    color:hsl(259, 100%, 65%);
+    font-weight: 800i;
+}
+
+
+small {
+    color: hsl(0, 100%, 67%);
+    padding: 0px;
+    margin: 0px;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+@media (min-width: 414px) {
+
+    .container {
+        padding: 40px;
+        max-width: 600px;
+        border-bottom-right-radius: 150px;
     }
-    .box-inputs{
+    .inputContainer {
+        max-width: 400px;
+        gap: 20px;
+    }
+    .buttonContainer {
+        padding: 40px 0px;
         width: 100%;
     }
-    .single-input input{
-        width: 90px;
-        font-size: 20px;
-        padding: 15px;
+
+    .innerButtonContainer {
+        justify-content: flex-end;
     }
-    .error{
-        width: 90px;
+
+    input {
+        font-size: 32px;
     }
-    .button-content{
-        margin-top: 20px;
-    }
-    button img{
-        width: 25px;
-    }
-    .line-sec{
-        border: 1px solid hsl(0, 0%, 86%);
-        width: 100%;
-    }
-    .result-view{
-        font-size: 50px;
+
+    p {
+        font-size: 70px;
     }
 }
